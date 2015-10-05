@@ -33,7 +33,7 @@ var cobra = new Cobra();
                      var title = json.message.title;
                      var contenu = json.message.content;
                      if(pseudo == utilisateur.pseudo)
-                      afficherNotification(title,contenu)
+                      afficherNotification(pseudo, title,contenu);
 
                   }
                   
