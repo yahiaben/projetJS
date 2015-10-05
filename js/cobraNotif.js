@@ -27,7 +27,7 @@ var cobra = new Cobra();
                   for (var i = 0; i < result.responseJSON.Events.length; i++) {
                      var content = result.responseJSON.Events[i].content;
                      // recuperer les infos contenues dans les messages
-                     //console.log(content);
+                     console.log(content);
                      var json = JSON.parse(content);
                      var pseudo = json.message.pseudo
                      var title = json.message.title;

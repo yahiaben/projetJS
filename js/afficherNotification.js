@@ -1,7 +1,11 @@
 function afficherNotification(pseudo,title,contenu){
+   
 
     //La div contenant toutes les notifications
-    var divNotifications = document.getElementById('notifications');
+    var divNotifications = document.getElementById('scrollNotif');
+
+    //On affiche le div scrollNotif qui contient les notifications
+    divNotifications.style.display = "block";
 
     //Je crée une div pour la nouvelle notification
     var divNotification = document.createElement("div");
