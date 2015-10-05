@@ -24,12 +24,17 @@ var cobra = new Cobra();
 
               complete: function (result, status) {
                   console.log("complete");
-                  console.log("voici : " +result.responseJSON.Events.length);
                   for (var i = 0; i < result.responseJSON.Events.length; i++) {
                      var content = result.responseJSON.Events[i].content;
                      // recuperer les infos contenues dans les messages
-                     console.log(content);
-                     //console.log(content.message.pseudo);
+                     //console.log(content);
+                     var json = JSON.parse(content);
+                     var pseudo = json.message.pseudo
+                     var title = json.message.title;
+                     var contenu = json.message.content;
+                     if(pseudo == utilisateur.pseudo)
+                      afficherNotification(title,contenu)
+
                   }
                   
                   // Pour envoyer un message dans toute la room
