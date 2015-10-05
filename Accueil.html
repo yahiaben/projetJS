@@ -1,0 +1,105 @@
+<html>
+<head>
+	<title>Notif'BOOK - Envoie une notification a tes amis !</title> 
+  <link rel="stylesheet" href="css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="css/twitter.css"> 
+  <link rel="stylesheet" href="css/style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <h3><a href="/">Notif'BOOK</a></h3>
+        <ul>
+          <li><a href="#">Calendrier</a></li>
+          <li><a href="#">Envoyer une Notification</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Historique</a></li>
+          <li><button data-url="demo-modal.html" id="demo">Click me</button></li>
+        </ul>
+        <form action="#" >
+          <input type="text" placeholder="Recherche un article">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" >
+
+    <div class="hero-unit">
+      <h1>Notif'BOOK</h1>
+      <p>Tenir informé ses amis distant en temps réel !</p>
+      <p><a href="#" class="btn primary large">En savoir plus</a></p>
+      <div id="formPseudo">
+      </div>
+    </div>
+
+    <p>&nbsp;</p>
+
+    <div class="row" id="divAccueil">
+      <div class="span11">
+
+        <p>&nbsp;</p>
+        <div class="page-header">
+          <h1>Envoyer une Notification</h1>
+        </div>
+
+        <form action="" class="form-stacked" id="sendForm">
+          <fieldset>
+            <div class="clearfix">
+              <label>Titre</label>
+              <div class="input" >
+                <input type="text" id="titreNotif">
+              </div>
+            </div>
+
+            <div class="clearfix">
+              <label>Message</label>
+              <div class="input">
+                <textarea name="" id="textNotif" cols="30" raw="10"></textarea>
+                <span class="help-block">Pas de code HTML dans le message</span>
+              </div>
+            </div>
+            <div class="actions">
+              <input type="submit" value="Envoyer" class="btn primary" id="validerNotif">
+              <input type="reset" class="btn">
+            </div>
+          </fieldset>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="notifications" id="notifications">
+    <!--<div class="notification add">
+      <div class="left">
+        <div class="icon">
+          &#128165;
+        </div>
+      </div>
+      <div class="right">
+        <h2>Titre dans accueil</h2>
+        <p>Une petite description</p>
+      </div>
+    </div> -->
+  </div>
+</body>
+
+<script type="text/javascript" src="https:ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/socket.io.js"></script>
+<script src="js/cobra.js"></script>
+
+<!--<script type="text/javascript" src="js/cobraNotif.js"></script>-->
+<script type="text/javascript" src="js/mustache.js"></script>
+<script type="text/javascript" src="js/notification.js"></script>
+<script type="text/javascript" src="js/utilisateur.js"></script>
+<script type="text/javascript" src="js/formPseudo.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/afficherNotification.js"></script>
+
+</html>
