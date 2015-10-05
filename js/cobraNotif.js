@@ -55,10 +55,11 @@ var cobra = new Cobra();
             }
             else if (message.message) {
              // Message reçu, je le traite
-             console.log(message.message.pseudo);
+             console.log("mon code");
+             console.log("pseudo : "+message.message.pseudo);
              console.log(message.message.title);
              console.log(message.message.content);
-             afficherNotification(message.message.title,message.message.content)
+             afficherNotification(message.message.pseudo,message.message.title,message.message.content)
                //$('body').notif({title: message.message.title, content:message.message.content, icon: '&#128165'});
 		
            }

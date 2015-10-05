@@ -1,4 +1,4 @@
-function afficherNotification(title,contenu){
+function afficherNotification(pseudo,title,contenu){
 
     //La div contenant toutes les notifications
     var divNotifications = document.getElementById('notifications');
@@ -20,10 +20,12 @@ function afficherNotification(title,contenu){
     divRight.className = "right";
     
     //je crée le pseudo, titre et contenu
+    var pseudo = document.createTextNode(pseudo);
     var titre = document.createTextNode(title);
     var contenu = document.createTextNode(contenu);
 
     //je crée le paragraphe pour le pseudo, le titre, le contenu
+    var pPseudo = document.createElement("p");
     var h2 = document.createElement("h2");
     var pContenu = document.createElement("p");
     
@@ -31,9 +33,9 @@ function afficherNotification(title,contenu){
     var icone = document.createElement("img");
     icone.src ="img/icone.png";
     icone.id = "imgIcone";
-
     //j'ajoute le pseudo, le titre et le contenu
     pContenu.appendChild(contenu);
+    pPseudo.appendChild(pseudo);
     h2.appendChild(titre);
 
     //j'ajoute l'icone
@@ -45,6 +47,9 @@ function afficherNotification(title,contenu){
     //j'ajoute le titre, le contenu et le pseudo
     divRight.appendChild(h2);
     divRight.appendChild(pContenu);
+    divRight.appendChild(pPseudo);
+    
+    
 
     //j'ajoute la div gauche et la div droite
     divNotification.appendChild(divLeft);
