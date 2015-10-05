@@ -22,6 +22,11 @@
 	border-radius: 10px;
 }
 
+#pidPseudo{
+	text-align: right;
+	padding-right: 20px;
+	font: bold 15px HelveticaNeue, Helvetica, Arial, sans-serif;;
+}
 .notification {
 	cursor: pointer;
 	border-bottom:1px solid #C1C1C1;

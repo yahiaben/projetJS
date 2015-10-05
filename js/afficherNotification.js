@@ -20,12 +20,13 @@ function afficherNotification(pseudo,title,contenu){
     divRight.className = "right";
     
     //je crée le pseudo, titre et contenu
-    var pseudo = document.createTextNode(pseudo);
+    var pseudo = document.createTextNode(" De : "+pseudo);
     var titre = document.createTextNode(title);
     var contenu = document.createTextNode(contenu);
 
     //je crée le paragraphe pour le pseudo, le titre, le contenu
     var pPseudo = document.createElement("p");
+    pPseudo.id ="pidPseudo";
     var h2 = document.createElement("h2");
     var pContenu = document.createElement("p");
     
