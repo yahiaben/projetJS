@@ -61,6 +61,7 @@ function afficherNotification(pseudo,title,contenu){
     divNotification.appendChild(divRight);
 
     //j'ajoute la nouvelle notification à l'ensemble des notifications
-    divNotifications.appendChild(divNotification);
+    //divNotifications.appendChild(divNotification);
+    divNotifications.insertBefore(divNotification,divNotifications.firstChild);
 
 }

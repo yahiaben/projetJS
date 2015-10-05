@@ -661,7 +661,7 @@ select,
 .uneditable-input {
   display: inline-block;
   width: 210px;
-  height: 18px;
+  height: 25px;
   padding: 4px;
   font-size: 13px;
   line-height: 18px;
@@ -701,7 +701,7 @@ select, input[type=file] {
   line-height: 27px;
 }
 textarea {
-  height: auto;
+  height: 87px;
 }
 .uneditable-input {
   background-color: #eee;

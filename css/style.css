@@ -82,8 +82,9 @@ p{
 
 #scrollNotif{
 	overflow-y: scroll;
+	overflow-x: hidden;
 	width: 355px;
-	height: 173px;
+	height: 330px;
 	display : none;
 	padding-right: 10px;
 }
