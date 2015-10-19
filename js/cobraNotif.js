@@ -1,15 +1,16 @@
 var cobra = new Cobra();
-        var room = "notifications3-yahia";
+        var room = "notifications6-yahia";
+        var roomPseudo = 'BDDPseudo4'
         var socketId;
-        var apiUrl = 'http://cobra-framework.com:3000/api/events/' + room;
+        var pseudosEnregistre;
+        var apiUrl = 'http://cobra-framework.com:3000/api/events/' + roomPseudo;
         cobra.connect('http://cobra-framework.com:8080');
-        var MapUtilisateur = new Map();
-        var i = 0;
         cobra.connectionCallback = function () {
-            cobra.joinRoom(room);
+            cobra.joinRoom(roomPseudo);
         }
     
         cobra.joinRoomCallback = function (roomName) {
+            console.log("je rentre dans le join room callback" + roomName);
            // appel à l'API pour récupérer tous les messages de la room roomName
            $.ajax({
               type: 'GET',
@@ -24,6 +25,9 @@ var cobra = new Cobra();
 
               complete: function (result, status) {
                   console.log("complete");
+                  console.log(result.responseJSON.Events.length);
+                  if(roomName == roomPseudo)
+                    pseudosEnregistre = result;
                   for (var i = 0; i < result.responseJSON.Events.length; i++) {
                      var content = result.responseJSON.Events[i].content;
                      // recuperer les infos contenues dans les messages
@@ -32,16 +36,12 @@ var cobra = new Cobra();
                      var pseudo = json.message.pseudo
                      var title = json.message.title;
                      var contenu = json.message.content;
-                     if(pseudo == utilisateur.pseudo)
+                     if(pseudo == utilisateur.pseudo && cobra.roomName == room){
+                      console.log("je rentre ici  et voici le titre " + title);
                       afficherNotification(pseudo, title,contenu);
+                     }
 
                   }
-                  
-                  // Pour envoyer un message dans toute la room
-                  //cobra.sendMessage({content : "test"}, room, true);
-                  
-                  // Pour envoyer un message dans toute la room excepté soi
-                  // cobra.sendMessage({content : "test"}, room, false);
               }
           });
         }
@@ -72,17 +72,12 @@ var cobra = new Cobra();
     
         cobra.clientJoinedRoomCallback = function(data){
             // Un autre client a rejoint la room
-            /*console.log(data.id + "a rejoint la page");
-            MapUtilisateur.set(i, data.id);
-            i++;
-            for (var [cle, valeur] of MapUtilisateur) {
-              console.log(cle + " = " + valeur);
-            }*/
+            /*console.log(data.id + "a rejoint la page");*/
 
         }
     
         cobra.clientLeftRoomCallback = function(data){
             // Un client a quitté la room
-            console.log(data.id + "a quitté la page");
+            //console.log(data.id + "a quitté la page");
         }
 

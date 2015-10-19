@@ -1,3 +1,4 @@
+
 var utilisateur = new Utilisateur();
 var myForm = document.getElementById('sendForm');
 myForm.addEventListener('submit', function(e){
@@ -14,20 +15,26 @@ myForm.addEventListener('submit', function(e){
 var formConnexion = document.getElementById('formConnexion');
 formConnexion.addEventListener('submit', function(e){
 	var pseudo = document.getElementById('pseudoC').value;
-	console.log(pseudo);
-	connexionUtilisateur(pseudo);
+	var mdp = document.getElementById('mdpC').value;
+	var connect = new Connection(pseudo, mdp);
+	// On valide le mdp avec le pseudo si il existe
+	if(connect.valider()){
+		connexionUtilisateur(pseudo);
+	}
 	e.preventDefault();
 }, true);
 
 
 function connexionUtilisateur(pseudo) {
 	formConnexion.remove();
+	//je charge les messages de l'utilisateur en question
+	cobra.joinRoom(room);
 	var divAccueil = document.getElementById('divAccueil');
 	divAccueil.style.display = "block";
-	var scriptCobra = document.createElement("script");
-	scriptCobra.src = "js/cobraNotif.js";
-	scriptCobra.type = "text/javascript";
-	var body = document.getElementsByTagName("body")[0]
-	body.appendChild(scriptCobra);
 	utilisateur.connect(pseudo);
 }
+/*
+$("#notification").click(function(event) {
+	event.preventDefault();
+	$("#notification").slideUp();
+});*/

@@ -10,7 +10,8 @@ function afficherNotification(pseudo,title,contenu){
     //Je crée une div pour la nouvelle notification
     var divNotification = document.createElement("div");
     divNotification.className = "notification add";
-
+    
+    divNotification.id = "notification";
     //je crée la div gauche (contient div icone)
     var divLeft = document.createElement("div");
     divLeft.className = "left";
