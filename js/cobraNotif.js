@@ -3,6 +3,7 @@ var cobra = new Cobra();
         var roomPseudo = 'BDDPseudo4'
         var socketId;
         var pseudosEnregistre;
+        var pseudos = new Array("rr", "rt", "rg", "rf", "ri", "rp", "rh", "ra", "rk");
         var apiUrl = 'http://cobra-framework.com:3000/api/events/' + roomPseudo;
         cobra.connect('http://cobra-framework.com:8080');
         cobra.connectionCallback = function () {
@@ -36,6 +37,11 @@ var cobra = new Cobra();
                      var pseudo = json.message.pseudo
                      var title = json.message.title;
                      var contenu = json.message.content;
+                    
+                     if(roomName == roomPseudo){
+                       pseudos.push(pseudo);
+                     }
+                    
                      if(pseudo == utilisateur.pseudo && cobra.roomName == room){
                       console.log("je rentre ici  et voici le titre " + title);
                       afficherNotification(pseudo, title,contenu);

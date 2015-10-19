@@ -8,23 +8,7 @@
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="fill">
-      <div class="container">
-        <h3><a href="/">Notif'BOOK</a></h3>
-        <ul>
-          <li><a href="#">Calendrier</a></li>
-          <li><a href="#">Envoyer une Notification</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Historique</a></li>
-          <li><button data-url="demo-modal.html" id="demo">Click me</button></li>
-        </ul>
-        <form action="#" >
-          <input type="text" placeholder="Recherche un article">
-        </form>
-      </div>
-    </div>
-  </div>
+  
 
   <div class="container" >
 
@@ -39,6 +23,25 @@
     <p>&nbsp;</p>
 
     <div class="row" id="divAccueil">
+      <div class="topbar">
+    <div class="fill">
+      <div class="container" id="menu">
+        <h3><a href="/">Notif'BOOK</a></h3>
+        <ul>
+          <li><a href="#">Calendrier</a></li>
+          <li><a href="#">Envoyer une Notification</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Historique</a></li>
+          <form id="recherchePseudo" action="#" method="post">
+            <input type="text" class="search" name="search" value="Rechercher un amis" 
+              onfocus="if(this.value=='Rechercher un amis') this.value=''" 
+              onblur="if(this.value=='') this.value='Rechercher un amis'" autocomplete="off"/>
+            
+          </form>
+        </ul>
+      </div>
+    </div>
+  </div>
       <div class="span11">
 
         <p>&nbsp;</p>
@@ -94,5 +97,5 @@
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/afficherNotification.js"></script>
 <script type="text/javascript" src="js/connection.js"></script>
-
+<script type="text/javascript" src="js/recherche.js"></script>
 </html>
