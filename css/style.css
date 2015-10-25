@@ -106,3 +106,27 @@ p{
 	padding-right: 10px;
 }
 
+div#divLogin {
+	margin-top: 40px;
+	visibility:visible;
+	position: absolute;
+    z-index:0;
+}
+
+div#divAccount{
+	margin-top: 40px;
+	visibility:hidden;
+	position: relative;
+    z-index:1;
+}
+
+
+ul#LoginAccount{
+	float:left;
+}
+
+
+div#titre{
+	float:right;
+}
+

@@ -24,3 +24,4 @@ Connection.prototype = {
 		return false;
 	}
 }
+

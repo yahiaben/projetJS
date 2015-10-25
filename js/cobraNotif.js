@@ -70,7 +70,8 @@ var cobra = new Cobra();
              console.log("pseudo : "+message.message.pseudo);
              console.log(message.message.title);
              console.log(message.message.content);
-             afficherNotification(message.message.pseudo,message.message.title,message.message.content)
+             if(message.message.title != null)
+              afficherNotification(message.message.pseudo,message.message.title,message.message.content)
                //$('body').notif({title: message.message.title, content:message.message.content, icon: '&#128165'});
 		
            }
