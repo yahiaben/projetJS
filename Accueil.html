@@ -17,70 +17,70 @@
       <p>Tenir informé ses amis distant en temps réel !</p>
       <p><a href="#" class="btn primary large">En savoir plus</a></p>
       <!-- <div id="formPseudo">
-      </div> -->
-      <ul class="nav nav-tabs" id="menuConnexion">
-                        <li class="active" id="btnLogin"><a data-toggle="tab">Login</a></li>
-                        <li id="btnAccount" class=""><a data-toggle="tab">Create Account</a></li>
-                    </ul>
-                    <br>
+    </div> -->
+    <ul class="nav nav-tabs" id="menuConnexion">
+      <li class="active" id="btnLogin"><a data-toggle="tab">Login</a></li>
+      <li id="btnAccount" class=""><a data-toggle="tab">Create Account</a></li>
+    </ul>
+    <br>
 
-                    <div id="divLogin">
-                        <form class="form-stacked" id="sendLogin">
-                                <fieldset>
-                                    <div class="clearfix">
-                                        <label>Pseudo de connection</label>
-                                        <div class="input" >
-                                            <input type="text" id="pseudoL">
-                                        </div>
-                                    </div>
+    <div id="divLogin">
+      <form class="form-stacked" id="sendLogin">
+        <fieldset>
+          <div class="clearfix">
+            <label>Pseudo de connection</label>
+            <div class="input" >
+              <input type="text" id="pseudoL">
+            </div>
+          </div>
 
-                                      <div class="clearfix">
-                                        <label>Mot de passe</label>
-                                        <div class="input" >
-                                            <input type="text" id="passL">
-                                        </div>
-                                    </div>
+          <div class="clearfix">
+            <label>Mot de passe</label>
+            <div class="input" >
+              <input type="text" id="passL">
+            </div>
+          </div>
 
-                                    <div class="actions">
-                                        <input type="submit" value="Envoyer" class="btn primary" >
-                                        <input type="reset" class="btn">
-                                    </div>
-                                </fieldset>
-                        </form>
-                    </div>
-
-                    <div id="divAccount">
-                        <form class="form-stacked" id="sendAccount">
-                                <fieldset>
-                                    <div class="clearfix">
-                                        <label>Pseudo</label>
-                                        <div class="input" >
-                                            <input type="text" id="pseudoA">
-                                        </div>
-                                    </div>
-
-                                      <div class="clearfix">
-                                        <label>Mot de passe</label>
-                                        <div class="input" >
-                                            <input type="text" id="passA">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="actions">
-                                        <input type="submit" value="Envoyer" class="btn primary">
-                                        <input type="reset" class="btn">
-                                    </div>
-                                </fieldset>
-                        </form>
-                    </div>
-                </div>
+          <div class="actions">
+            <input type="submit" value="Envoyer" class="btn primary" >
+            <input type="reset" class="btn">
+          </div>
+        </fieldset>
+      </form>
     </div>
 
-    <p>&nbsp;</p>
+    <div id="divAccount">
+      <form class="form-stacked" id="sendAccount">
+        <fieldset>
+          <div class="clearfix">
+            <label>Pseudo</label>
+            <div class="input" >
+              <input type="text" id="pseudoA">
+            </div>
+          </div>
 
-    <div class="row" id="divAccueil">
-      <div class="topbar">
+          <div class="clearfix">
+            <label>Mot de passe</label>
+            <div class="input" >
+              <input type="text" id="passA">
+            </div>
+          </div>
+
+
+          <div class="actions">
+            <input type="submit" value="Envoyer" class="btn primary">
+            <input type="reset" class="btn">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="row" id="divAccueil">
+  <div class="topbar">
     <div class="fill">
       <div class="container" id="menu">
         <h3><a href="/">Notif'BOOK</a></h3>
@@ -91,54 +91,54 @@
           <li><a href="#">Historique</a></li>
           <form id="recherchePseudo" method="post">
             <input type="text" class="search" name="search" value="Rechercher un amis" 
-              onfocus="if(this.value=='Rechercher un amis') this.value=''" 
-              onblur="if(this.value=='') this.value='Rechercher un amis'" autocomplete="off"/>
+            onfocus="if(this.value=='Rechercher un amis') this.value=''" 
+            onblur="if(this.value=='') this.value='Rechercher un amis'" autocomplete="off"/>
             
           </form>
         </ul>
       </div>
     </div>
   </div>
-      <div class="span11" style="margin-left: 20%">
+  <div class="span11" style="margin-left: 20%">
 
-        <p>&nbsp;</p>
-        <div class="page-header">
-          <h1>Envoyer une Notification</h1>
+    <p>&nbsp;</p>
+    <div class="page-header">
+      <h1>Envoyer une Notification</h1>
+    </div>
+
+    <form action="" class="form-stacked" id="sendForm">
+      <fieldset>
+        <div class="clearfix">
+          <label>Titre</label>
+          <div class="input" >
+            <input type="text" id="titreNotif">
+          </div>
         </div>
 
-        <form action="" class="form-stacked" id="sendForm">
-          <fieldset>
-            <div class="clearfix">
-              <label>Titre</label>
-              <div class="input" >
-                <input type="text" id="titreNotif">
-              </div>
-            </div>
-
-            <div class="clearfix">
-              <label>Message</label>
-              <div class="input">
-                <textarea name="" id="textNotif" cols="30" raw="10"></textarea>
-                <span class="help-block">Pas de code HTML dans le message</span>
-              </div>
-            </div>
-            <div class="actions">
-              <input type="submit" value="Envoyer" class="btn primary" id="validerNotif">
-              <input type="reset" class="btn">
-            </div>
-          </fieldset>
-        </form>
+        <div class="clearfix">
+          <label>Message</label>
+          <div class="input">
+            <textarea name="" id="textNotif" cols="30" raw="10"></textarea>
+            <span class="help-block">Pas de code HTML dans le message</span>
+          </div>
+        </div>
+        <div class="actions">
+          <input type="submit" value="Envoyer" class="btn primary" id="validerNotif">
+          <input type="reset" class="btn">
+        </div>
+      </fieldset>
+    </form>
 
 
-      </div>
-    </div>
   </div>
+</div>
+</div>
 
-  <div class="notifications" id="notifications">
-    <div id="scrollNotif">
+<div class="notifications" id="notifications">
+  <div id="scrollNotif">
     
-    </div>
   </div>
+</div>
 </body>
 
 <script type="text/javascript" src="https:ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>

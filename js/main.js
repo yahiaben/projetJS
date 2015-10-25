@@ -44,15 +44,15 @@ formCreateAccount.addEventListener('submit', function(e){
 			pseudoExiste = true;
 			return false;
 		}
-    }
-    
-    if(!pseudoExiste){
-    	console.log("------------------------> ***************** "+pseudoA + "fenrjgferznjge");
-    	cobra.sendMessage({pseudo: pseudoA, mdp: mdpA},"BDDPseudo4",false);
-    	alert("Féicitation, votre compte à été créé !\n"+"pseudo : "+pseudoA+"\nmot de passe : "+mdpA);
-    	apiUrl = 'http://cobra-framework.com:3000/api/events/' + room;
-    	connexionUtilisateur(pseudoA);
-    }
+	}
+	
+	if(!pseudoExiste){
+		console.log("------------------------> ***************** "+pseudoA + "fenrjgferznjge");
+		cobra.sendMessage({pseudo: pseudoA, mdp: mdpA},"BDDPseudo4",false);
+		alert("Féicitation, votre compte à été créé !\n"+"pseudo : "+pseudoA+"\nmot de passe : "+mdpA);
+		apiUrl = 'http://cobra-framework.com:3000/api/events/' + room;
+		connexionUtilisateur(pseudoA);
+	}
 
 	e.preventDefault();
 }, true);
@@ -86,12 +86,12 @@ $("#notification").click(function(event) {
 
 var btnLogin = document.getElementById('btnLogin');
 btnLogin.addEventListener('click', function(){
-        var divL = document.getElementById('divLogin');
-        divL.style.visibility="visible";
-   		var divA = document.getElementById('divAccount');
-   		divA.style.visibility="hidden";
-   		btnLogin.className ="active";
-   		btnAccount.className="";
+	var divL = document.getElementById('divLogin');
+	divL.style.visibility="visible";
+	var divA = document.getElementById('divAccount');
+	divA.style.visibility="hidden";
+	btnLogin.className ="active";
+	btnAccount.className="";
 }, true);
 
 
@@ -106,11 +106,11 @@ btnLogin.addEventListener('click', function(){
 
 var btnAccount = document.getElementById('btnAccount');
 btnAccount.addEventListener('click', function(){
-        var divA = document.getElementById('divAccount');
-        divA.style.visibility="visible";
-   		var divL = document.getElementById('divLogin');
-   		divL.style.visibility="hidden";
-   		btnLogin.className ="";
-   		btnAccount.className="active";
+	var divA = document.getElementById('divAccount');
+	divA.style.visibility="visible";
+	var divL = document.getElementById('divLogin');
+	divL.style.visibility="hidden";
+	btnLogin.className ="";
+	btnAccount.className="active";
 }, true);
 

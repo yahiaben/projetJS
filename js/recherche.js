@@ -14,7 +14,7 @@ window.onload = function(){
 		var txt = this.value;
 		if(!txt){
 			list.style.display = "none";
-		    return;
+			return;
 		}
 		
 		var suggestions = 0;
@@ -50,7 +50,7 @@ window.onload = function(){
 
 	input.onblur = function(){
 		list.style.display = "none";
-        if(this.value=="")
-            this.value = "Rechercher un amis";
+		if(this.value=="")
+			this.value = "Rechercher un amis";
 	};
 };
