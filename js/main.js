@@ -8,17 +8,16 @@ myForm.addEventListener('submit', function(e){
 	var pseudo = utilisateur.pseudo;
 	var nb = document.getElementsByClassName('btnReceveur').length;
 	if(nb==0){
-		var n = new Notification(pseudo,titre,contenu, "tous");
+		var n = new Notification(pseudo,titre,contenu, "tous", false);
 		n.envoyerNotification();
 		e.preventDefault();
 	}else{
 		for(i=0;i<nb;i++){
 			var receiver = document.getElementsByClassName('btnReceveur')[i].id;
-			var n = new Notification(pseudo,titre,contenu, receiver);
+			var n = new Notification(pseudo,titre,contenu, receiver,true);
 			n.envoyerNotification();
 			e.preventDefault();
 		}
-		var parent = document.getElementById("receveurs");
 		while(document.getElementsByClassName('btnReceveur').length>0){
 			document.getElementsByClassName('btnReceveur')[0].remove(this);
 		}
@@ -62,7 +61,6 @@ formCreateAccount.addEventListener('submit', function(e){
 	}
 	
 	if(!pseudoExiste){
-		console.log("------------------------> ***************** "+pseudoA + "fenrjgferznjge");
 		cobra.sendMessage({pseudo: pseudoA, mdp: mdpA},"BDDPseudo4",false);
 		alert("Féicitation, votre compte à été créé !\n"+"pseudo : "+pseudoA+"\nmot de passe : "+mdpA);
 		apiUrl = 'http://cobra-framework.com:3000/api/events/' + room;

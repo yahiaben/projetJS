@@ -1,4 +1,4 @@
-function afficherNotification(pseudo,title,contenu){
+function afficherNotification(pseudo,title,contenu,moi, group){
    
 
     //La div contenant toutes les notifications
@@ -25,7 +25,20 @@ function afficherNotification(pseudo,title,contenu){
     divRight.className = "right";
     
     //je crée le pseudo, titre et contenu
-    var pseudo = document.createTextNode(" De : "+pseudo);
+    if(moi){
+        if(group){
+            alert("yess group me");
+            var pseudo = document.createTextNode(" A : Groupe");
+        }else{
+             var pseudo = document.createTextNode(" A : "+pseudo);
+         }
+    }
+
+    if(!moi){
+        var pseudo = document.createTextNode(" De : "+pseudo);
+    }
+        
+    
     var titre = document.createTextNode(title);
     var contenu = document.createTextNode(contenu);
 

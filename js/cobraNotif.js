@@ -38,15 +38,19 @@ $.ajax({
       var receiver = json.message.receiver;
       var title = json.message.title;
       var contenu = json.message.content;
+      var group = json.message.group;
 
       if(roomName == roomPseudo){
         pseudos.push(pseudo);
       }
 
       if(cobra.roomName == room){
-        if(pseudo == utilisateur.pseudo || receiver==utilisateur.pseudo || receiver=="tous"){
-          console.log("joinRoomCallback message : " + title);
-          afficherNotification(pseudo, title,contenu);
+        if(pseudo == utilisateur.pseudo){
+          afficherNotification(receiver, title,contenu,true, group);
+        }else{
+          if(receiver==utilisateur.pseudo || receiver=="tous"){
+            afficherNotification(pseudo, title,contenu,false, group);
+          }
         }
       }
     }
@@ -68,13 +72,22 @@ socketId = message.socketId;
 }
 else if (message.message) {
 // Message reçu, je le traite
-console.log("mon code");
-console.log("pseudo : "+message.message.pseudo);
-console.log(message.message.title);
-console.log(message.message.content);
+var pseudo = message.message.pseudo;
+var receiver = message.message.receiver;
+var titre = message.message.title;
+var contenu = message.message.content;
+var group = message.message.group;
+
 if(message.message.title != null){
-  if(message.message.receiver == utilisateur.pseudo || message.message.pseudo==utilisateur.pseudo || message.message.receiver=="tous")
-    afficherNotification(message.message.pseudo,message.message.title,message.message.content);
+   if(cobra.roomName == room){
+        if(pseudo == utilisateur.pseudo){
+          afficherNotification(receiver, titre,contenu,true, group);
+        }else{
+          if(receiver==utilisateur.pseudo || receiver=="tous"){
+            afficherNotification(pseudo, titre,contenu,false, group);
+          }
+        }
+      }
 }
   
 //$('body').notif({title: message.message.title, content:message.message.content, icon: '&#128165'});
