@@ -14,12 +14,16 @@ myForm.addEventListener('submit', function(e){
 	}else{
 		for(i=0;i<nb;i++){
 			var receiver = document.getElementsByClassName('btnReceveur')[i].id;
-			alert("receveur ?? : "+receiver);
 			var n = new Notification(pseudo,titre,contenu, receiver);
 			n.envoyerNotification();
 			e.preventDefault();
 		}
+		var parent = document.getElementById("receveurs");
+		while(document.getElementsByClassName('btnReceveur').length>0){
+			document.getElementsByClassName('btnReceveur')[0].remove(this);
+		}
 	}
+	myForm.reset();
 }, true);
 
 
