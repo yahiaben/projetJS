@@ -31,23 +31,25 @@ $.ajax({
       pseudosEnregistre = result;
     for (var i = 0; i < result.responseJSON.Events.length; i++) {
       var content = result.responseJSON.Events[i].content;
-// recuperer les infos contenues dans les messages
-console.log(content);
-var json = JSON.parse(content);
-var pseudo = json.message.pseudo
-var title = json.message.title;
-var contenu = json.message.content;
+      // recuperer les infos contenues dans les messages
+      console.log(content);
+      var json = JSON.parse(content);
+      var pseudo = json.message.pseudo;
+      var receiver = json.message.receiver;
+      var title = json.message.title;
+      var contenu = json.message.content;
 
-if(roomName == roomPseudo){
-  pseudos.push(pseudo);
-}
+      if(roomName == roomPseudo){
+        pseudos.push(pseudo);
+      }
 
-if(pseudo == utilisateur.pseudo && cobra.roomName == room){
-  console.log("je rentre ici  et voici le titre " + title);
-  afficherNotification(pseudo, title,contenu);
-}
-
-}
+      if(cobra.roomName == room){
+        if(pseudo == utilisateur.pseudo || receiver==utilisateur.pseudo || receiver=="tous"){
+          console.log("joinRoomCallback message : " + title);
+          afficherNotification(pseudo, title,contenu);
+        }
+      }
+    }
 }
 });
 }
@@ -70,8 +72,11 @@ console.log("mon code");
 console.log("pseudo : "+message.message.pseudo);
 console.log(message.message.title);
 console.log(message.message.content);
-if(message.message.title != null)
-  afficherNotification(message.message.pseudo,message.message.title,message.message.content)
+if(message.message.title != null){
+  if(message.message.receiver == utilisateur.pseudo || message.message.pseudo==utilisateur.pseudo || message.message.receiver=="tous")
+    afficherNotification(message.message.pseudo,message.message.title,message.message.content);
+}
+  
 //$('body').notif({title: message.message.title, content:message.message.content, icon: '&#128165'});
 
 }

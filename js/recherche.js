@@ -1,3 +1,4 @@
+
 window.onload = function(){
 	
 	var form = document.getElementById("recherchePseudo");
@@ -19,11 +20,16 @@ window.onload = function(){
 		
 		var suggestions = 0;
 		var frag = document.createDocumentFragment();
+		var cpt=0;
 		for(var i = 0, c = pseudos.length; i < c; i++){
 			if(new RegExp("^"+txt,"i").test(pseudos[i])){
+				cpt++;
 				var word = document.createElement("li");
-				if(i%2 == 0){
+				console.log("pseudo : "+ pseudos[i]+"  modulo : "+ i +" % 2 = "+ (i%2));
+				if(cpt%2 == 0){
 					word.style.backgroundColor = "silver";
+				}else{
+					word.style.backgroundColor = "white";
 				}
 				frag.appendChild(word);
 				word.innerHTML = pseudos[i].replace(new RegExp("^("+txt+")","i"),"<strong>$1</strong>");
@@ -53,4 +59,34 @@ window.onload = function(){
 		if(this.value=="")
 			this.value = "Rechercher un amis";
 	};
+
+	input.onkeypress = function(){
+		if(event.keyCode==13){
+			event.preventDefault();
+			var res = window.confirm("Voulez-vous envoyer le message à "+input.value+" ?");
+			if(res){
+				var btnReceveur = document.createElement("input" );
+				btnReceveur.style.width = 100;
+				btnReceveur.style.backgroundColor="green";
+				btnReceveur.style.color="white";
+        		btnReceveur.type = "button";
+        		btnReceveur.className="btnReceveur";
+        		btnReceveur.id=input.value;
+        		btnReceveur.value=input.value;
+        		
+        		var listReceveurs = document.getElementById("receveurs");
+        		listReceveurs.appendChild(btnReceveur);
+			}
+		}
+	}
 };
+
+
+
+
+
+
+
+
+
+

@@ -6,9 +6,20 @@ myForm.addEventListener('submit', function(e){
 	var titre = document.getElementById('titreNotif').value;
 	var contenu = document.getElementById('textNotif').value;
 	var pseudo = utilisateur.pseudo;
-	var n = new Notification(pseudo,titre,contenu);
-	n.envoyerNotification();
-	e.preventDefault();
+	var nb = document.getElementsByClassName('btnReceveur').length;
+	if(nb==0){
+		var n = new Notification(pseudo,titre,contenu, "tous");
+		n.envoyerNotification();
+		e.preventDefault();
+	}else{
+		for(i=0;i<nb;i++){
+			var receiver = document.getElementsByClassName('btnReceveur')[i].id;
+			alert("receveur ?? : "+receiver);
+			var n = new Notification(pseudo,titre,contenu, receiver);
+			n.envoyerNotification();
+			e.preventDefault();
+		}
+	}
 }, true);
 
 

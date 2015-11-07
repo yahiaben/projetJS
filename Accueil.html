@@ -89,18 +89,22 @@
           <li><a href="#">Envoyer une Notification</a></li>
           <li><a href="#">Contact</a></li>
           <li><a href="#">Historique</a></li>
-          <form id="recherchePseudo" method="post">
+          <form id="recherchePseudo" method="">
             <input type="text" class="search" name="search" value="Rechercher un amis" 
             onfocus="if(this.value=='Rechercher un amis') this.value=''" 
-            onblur="if(this.value=='') this.value='Rechercher un amis'" autocomplete="off"/>
+            onblur="if(this.value=='') this.value='Rechercher un amis'" autocomplete="off"
+            onkeypress="if(event.keyCode==13){event.preventDefault()}"/>
             
           </form>
         </ul>
       </div>
     </div>
-  </div>
-  <div class="span11" style="margin-left: 20%">
+  </div>  
 
+  <div id="receveurs">
+  </div>
+
+  <div class="span11" style="margin-left: 5%">
     <p>&nbsp;</p>
     <div class="page-header">
       <h1>Envoyer une Notification</h1>

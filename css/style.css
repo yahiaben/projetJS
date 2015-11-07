@@ -1,3 +1,17 @@
+#receveurs{
+	float:left;
+	width: 200px;
+	height: 400px;
+	padding-left: 100px;
+	margin-left: 80px;
+	margin-top: 100px;
+	overflow-y: scroll;
+
+}
+
+#formEnvoie{
+
+}
 ul#listPseudo.suggestions{
 	padding-right: 0px;
 	margin-left: 5px;
@@ -7,7 +21,6 @@ ul#listPseudo.suggestions{
 #listPseudo{
 	position : fixed;
 	list-style-type:none;
-	background-color: white;
 	width: 200px;
 }
 
