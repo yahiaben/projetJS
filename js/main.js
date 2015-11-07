@@ -6,6 +6,8 @@ myForm.addEventListener('submit', function(e){
 	var titre = document.getElementById('titreNotif').value;
 	var contenu = document.getElementById('textNotif').value;
 	var pseudo = utilisateur.pseudo;
+	var tabReceveurs = Array();
+
 	var nb = document.getElementsByClassName('btnReceveur').length;
 	if(nb==0){
 		var n = new Notification(pseudo,titre,contenu, "tous", false);
@@ -14,10 +16,11 @@ myForm.addEventListener('submit', function(e){
 	}else{
 		for(i=0;i<nb;i++){
 			var receiver = document.getElementsByClassName('btnReceveur')[i].id;
-			var n = new Notification(pseudo,titre,contenu, receiver,true);
-			n.envoyerNotification();
+			tabReceveurs.push(receiver);
 			e.preventDefault();
 		}
+		var n = new Notification(pseudo,titre,contenu, tabReceveurs,true);
+		n.envoyerNotification();
 		while(document.getElementsByClassName('btnReceveur').length>0){
 			document.getElementsByClassName('btnReceveur')[0].remove(this);
 		}

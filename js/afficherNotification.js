@@ -27,14 +27,16 @@ function afficherNotification(pseudo,title,contenu,moi, group){
     //je crée le pseudo, titre et contenu
     if(moi){
         if(group){
-            alert("yess group me");
+            alert("group");
             var pseudo = document.createTextNode(" A : Groupe");
         }else{
+            alert("perso");
              var pseudo = document.createTextNode(" A : "+pseudo);
          }
     }
 
     if(!moi){
+        alert("reçoit");
         var pseudo = document.createTextNode(" De : "+pseudo);
     }
         

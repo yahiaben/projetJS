@@ -1,5 +1,5 @@
 var cobra = new Cobra();
-var room = "notifications6-yahia";
+var room = "BDDnotifFinal";
 var roomPseudo = 'BDDPseudo4'
 var socketId;
 var pseudosEnregistre;
@@ -48,8 +48,12 @@ $.ajax({
         if(pseudo == utilisateur.pseudo){
           afficherNotification(receiver, title,contenu,true, group);
         }else{
-          if(receiver==utilisateur.pseudo || receiver=="tous"){
+          if(receiver=="tous"){
             afficherNotification(pseudo, title,contenu,false, group);
+          }else{
+            var forMe = receiver.indexOf(utilisateur.pseudo);
+            if(forMe != -1)
+              afficherNotification(pseudo, title, contenu, false, group);
           }
         }
       }
@@ -83,8 +87,14 @@ if(message.message.title != null){
         if(pseudo == utilisateur.pseudo){
           afficherNotification(receiver, titre,contenu,true, group);
         }else{
-          if(receiver==utilisateur.pseudo || receiver=="tous"){
+          if(receiver=="tous"){
             afficherNotification(pseudo, titre,contenu,false, group);
+          }else{
+
+            var forMe = receiver.indexOf(utilisateur.pseudo);
+            if(forMe != -1){
+              afficherNotification(pseudo, titre, contenu, false, group);
+            }
           }
         }
       }
