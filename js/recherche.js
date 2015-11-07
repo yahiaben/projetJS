@@ -62,21 +62,23 @@ window.onload = function(){
 
 	input.onkeypress = function(){
 		if(event.keyCode==13){
+
 			event.preventDefault();
 			var res = window.confirm("Voulez-vous envoyer le message à "+input.value+" ?");
 			if(res){
 				var btnReceveur = document.createElement("input" );
-				btnReceveur.style.width = 100;
-				btnReceveur.style.backgroundColor="green";
-				btnReceveur.style.color="white";
         		btnReceveur.type = "button";
         		btnReceveur.className="btnReceveur";
         		btnReceveur.id=input.value;
         		btnReceveur.value=input.value;
-        		
+        		btnReceveur.addEventListener('click', function(e){
+					btnReceveur.remove(this);
+				});
+
         		var listReceveurs = document.getElementById("receveurs");
         		listReceveurs.appendChild(btnReceveur);
 			}
+			this.value = "Rechercher un amis";
 		}
 	}
 };

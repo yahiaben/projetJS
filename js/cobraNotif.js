@@ -3,7 +3,7 @@ var room = "notifications6-yahia";
 var roomPseudo = 'BDDPseudo4'
 var socketId;
 var pseudosEnregistre;
-var pseudos = new Array("rr", "rt", "rg", "rf", "ri", "rp", "rh", "ra", "rk");
+var pseudos = new Array();
 var apiUrl = 'http://cobra-framework.com:3000/api/events/' + roomPseudo;
 cobra.connect('http://cobra-framework.com:8080');
 cobra.connectionCallback = function () {

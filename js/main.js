@@ -93,8 +93,6 @@ $("#notification").click(function(event) {
 });*/
 
 
-
-
 var btnLogin = document.getElementById('btnLogin');
 btnLogin.addEventListener('click', function(){
 	var divL = document.getElementById('divLogin');

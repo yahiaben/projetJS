@@ -8,6 +8,15 @@
 	overflow-y: scroll;
 
 }
+#receveurs input[type='button']:hover{
+	background-color: red;
+}
+
+#receveurs input[type='button']{
+	width:100px;
+	background-color: green;
+	color:white;
+}
 
 #formEnvoie{
 
