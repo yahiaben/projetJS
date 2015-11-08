@@ -25,7 +25,6 @@ window.onload = function(){
 			if(new RegExp("^"+txt,"i").test(pseudos[i])){
 				cpt++;
 				var word = document.createElement("li");
-				console.log("pseudo : "+ pseudos[i]+"  modulo : "+ i +" % 2 = "+ (i%2));
 				if(cpt%2 == 0){
 					word.style.backgroundColor = "silver";
 				}else{
@@ -57,7 +56,7 @@ window.onload = function(){
 	input.onblur = function(){
 		list.style.display = "none";
 		if(this.value=="")
-			this.value = "Rechercher un amis";
+			this.value = "Rechercher un ami";
 	};
 
 	input.onkeypress = function(){
@@ -78,7 +77,7 @@ window.onload = function(){
         		var listReceveurs = document.getElementById("receveurs");
         		listReceveurs.appendChild(btnReceveur);
 			}
-			this.value = "Rechercher un amis";
+			this.value = "Rechercher un ami";
 		}
 	}
 };
