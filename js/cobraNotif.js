@@ -1,6 +1,6 @@
 var cobra = new Cobra();
-var room = "BDDnotifFinal";
-var roomPseudo = 'BDDPseudo4'
+var room = "BDDPseudoJS";
+var roomPseudo = 'BDDPseudoJS'
 var socketId;
 var pseudosEnregistre;
 var pseudos = new Array();

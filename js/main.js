@@ -64,7 +64,7 @@ formCreateAccount.addEventListener('submit', function(e){
 	}
 	
 	if(!pseudoExiste){
-		cobra.sendMessage({pseudo: pseudoA, mdp: mdpA},"BDDPseudo4",false);
+		cobra.sendMessage({pseudo: pseudoA, mdp: mdpA},roomPseudo,false);
 		alert("Féicitation, votre compte à été créé !\n"+"pseudo : "+pseudoA+"\nmot de passe : "+mdpA);
 		apiUrl = 'http://cobra-framework.com:3000/api/events/' + room;
 		connexionUtilisateur(pseudoA);
