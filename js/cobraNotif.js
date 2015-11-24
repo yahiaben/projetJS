@@ -1,6 +1,6 @@
 var cobra = new Cobra();
-var room = "BDDPseudoJS";
-var roomPseudo = 'BDDPseudoJS'
+var room = "BDDMessageJS";
+var roomPseudo = 'BDDPseudo2JS'
 var socketId;
 var pseudosEnregistre;
 var pseudos = new Array();
@@ -44,16 +44,19 @@ $.ajax({
         pseudos.push(pseudo);
       }
 
-      if(cobra.roomName == room){
-        if(pseudo == utilisateur.pseudo){
-          afficherNotification(receiver, title,contenu,true, group);
-        }else{
-          if(receiver=="tous"){
-            afficherNotification(pseudo, title,contenu,false, group);
+      if(roomName != roomPseudo){
+        if(cobra.roomName == room){
+          if(pseudo == utilisateur.pseudo){
+            afficherNotification(receiver, title,contenu,true, group);
           }else{
-            var forMe = receiver.indexOf(utilisateur.pseudo);
-            if(forMe != -1)
-              afficherNotification(pseudo, title, contenu, false, group);
+            console.log("je suis ici");
+            if(receiver=="tous"){
+              afficherNotification(pseudo, title,contenu,false, group);
+            }else{
+              var forMe = receiver.indexOf(utilisateur.pseudo);
+              if(forMe != -1)
+                afficherNotification(pseudo, title, contenu, false, group);
+            }
           }
         }
       }
@@ -76,6 +79,7 @@ socketId = message.socketId;
 }
 else if (message.message) {
 // Message reçu, je le traite
+console.log("voila le msg : " + message.message);
 var pseudo = message.message.pseudo;
 var receiver = message.message.receiver;
 var titre = message.message.title;

@@ -2,7 +2,7 @@
 window.onload = function(){
 	
 	var form = document.getElementById("recherchePseudo");
-	var input = form.search;
+	var input = document.getElementById("recherche");
 	
 	var list = document.createElement("ul");
 	list.className = "suggestions";
@@ -22,6 +22,7 @@ window.onload = function(){
 		var frag = document.createDocumentFragment();
 		var cpt=0;
 		for(var i = 0, c = pseudos.length; i < c; i++){
+			console.log(pseudos.length);
 			if(new RegExp("^"+txt,"i").test(pseudos[i])){
 				cpt++;
 				var word = document.createElement("li");
@@ -31,6 +32,8 @@ window.onload = function(){
 					word.style.backgroundColor = "white";
 				}
 				frag.appendChild(word);
+				console.log(frag);
+				console.log(word);
 				word.innerHTML = pseudos[i].replace(new RegExp("^("+txt+")","i"),"<strong>$1</strong>");
 				word.mot = pseudos[i];
 				word.onmousedown = function(){					
@@ -60,8 +63,10 @@ window.onload = function(){
 	};
 
 	input.onkeypress = function(){
+		console.log("teeeeeeeeeesssssstttt");
 		if(event.keyCode==13){
 
+		console.log("teeeeeeeeeesssssstttt 2");
 			event.preventDefault();
 			var res = window.confirm("Voulez-vous envoyer le message à "+input.value+" ?");
 			if(res){
